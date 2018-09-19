@@ -9,10 +9,7 @@ def main():
     headers = {'user-agent': 'my-app/0.0.1', 'Accept': 'application/xml'}
     proxies = {'http://host.name': 'foo.bar:4012'}
 
-    r = requests.request('GET',
-                         DEF_URI,
-                         proxies=proxies,
-                         headers=headers)
+    r = requests.get(DEF_URI, proxies=proxies, headers=headers)
 
     # print(r.text)
     print(r.status_code)
