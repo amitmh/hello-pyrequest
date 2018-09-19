@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import sys
+import json
 
 DEF_URI = 'http://docs.python-requests.org/en/master/api/'
 DEF_OUT = 'target/out'
@@ -19,6 +20,8 @@ def main():
 
     with open('%s.headers' % DEF_OUT, 'w', encoding='utf8') as headers_file:
         headers_file.write(str(r.headers))
+
+    print(r.headers.get("Content-Type"))
 
 
 if __name__ == "__main__":
