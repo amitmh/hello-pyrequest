@@ -3,6 +3,7 @@ import requests
 import sys
 
 DEF_URI = 'http://docs.python-requests.org/en/master/api/'
+DEF_OUT = 'target/out'
 
 
 def main():
@@ -11,15 +12,18 @@ def main():
 
     r = requests.get(DEF_URI, proxies=proxies, headers=headers)
 
-    # print(r.text)
     print(r.status_code)
-    print(r.headers)
+
+    with open('%s.txt' % DEF_OUT, 'a') as response_file:
+        response_file.write(r.text)
+
+    with open('%s.headers' % DEF_OUT, 'a') as response_file:
+        response_file.write(str(r.headers))
 
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as ex:
-        #raise
+        # raise
         sys.exit(ex)
-
