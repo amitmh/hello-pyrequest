@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 
-DEF_URI='http://docs.python-requests.org/en/master/api/'
+DEF_URI='http://docs.python-requests1.org/en/master/api/'
 
 def main():
     headers={'user-agent': 'my-app/0.0.1', 'Accept': 'application/xml'}
@@ -17,9 +17,6 @@ def main():
     print(r.headers)
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as ex:
-        raise
-        sys.exit(ex)
+    main()
+
         
