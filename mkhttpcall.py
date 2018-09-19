@@ -14,11 +14,11 @@ def main():
 
     print(r.status_code)
 
-    with open('%s.txt' % DEF_OUT, 'a') as response_file:
+    with open('%s.txt' % DEF_OUT, 'w', encoding='utf8') as response_file:
         response_file.write(r.text)
 
-    with open('%s.headers' % DEF_OUT, 'a') as response_file:
-        response_file.write(str(r.headers))
+    with open('%s.headers' % DEF_OUT, 'w', encoding='utf8') as headers_file:
+        headers_file.write(str(r.headers))
 
 
 if __name__ == "__main__":
